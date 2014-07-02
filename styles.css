@@ -1,0 +1,12 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    cursor: pointer;
+    width: 800px;
+}
+
+#task {
+    margin-left: 42px;
+}
