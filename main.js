@@ -1,9 +1,8 @@
 $(function() {
-    $.getJson('data.json', {
-        success : function(data) {
+    $.getJSON('data.json',  function(data) {
             if(typeof data[window.location.hash] == "undefined") {
                 window.location = "#step1";
             }
-        }
-    })
+
+    });
 });
