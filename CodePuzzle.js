@@ -18,6 +18,8 @@ CodePuzzle = {
         var lines = level.lines.slice();
 
         var prog = lines.join('');
+        prog = prog.replace(/\n+/g, "\n");
+        prog = prog.replace(/^\n+/g, "");
         $('#correct').html('');
         Sk.configure({
             output: function (text) {
@@ -60,6 +62,8 @@ CodePuzzle = {
         lines.each(function() {
            prog += "\n"+$(this).text().toString();
         });
+        prog = prog.replace(/\n+/g, "\n");
+        prog = prog.replace(/^\n+/g, "");
         $('#your').html('');
         Sk.configure({
             output: function (text) {
