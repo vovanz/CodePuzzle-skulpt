@@ -1,9 +1,3 @@
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-        throw "File not found: '" + x + "'";
-    return Sk.builtinFiles["files"][x];
-}
-
 CodePuzzle = {
     init: function (data) {
         CodePuzzle.data = data;
@@ -35,9 +29,11 @@ CodePuzzle = {
             eval(Sk.importMainWithBody("<stdin>", false, prog));
         }
         catch (e) {
-            alert(e.toString())
+            console.log(e.toString());
+            console.log(prog);
         }
 
+        lines = shuffle(lines);
         var puzzle = $('ul#code_puzzle');
         puzzle.html('');
         for (var i = 0; i < lines.length; i++) {
@@ -56,6 +52,7 @@ CodePuzzle = {
         });
         var task = $('#task');
         task.html(level.task);
+        CodePuzzle.run();
     },
     run: function() {
         var lines = $('ul#code_puzzle code');
@@ -72,9 +69,25 @@ CodePuzzle = {
         });
         try {
             eval(Sk.importMainWithBody("<stdin>", false, prog));
+            CodePuzzle.result();
         }
         catch (e) {
             $('#your').append(e.toString());
+            CodePuzzle.error(e.toString());
+        }
+    },
+    error: function(text) {
+        $('#result').html('Error! '+text);
+    },
+    result: function() {
+        if($('#your').text() != $('#correct').text()) {
+            $('#result').html('Wrong answer!');
+        } else {
+            if(CodePuzzle.data[CodePuzzle.step+1]) {
+                $('#result').html('Level complete! <a href="#step/'+(CodePuzzle.step+2).toString()+'">Go to next level.</a>');
+            } else {
+                $('#result').html('Congratulations! You won this game!');
+            }
         }
     }
 };

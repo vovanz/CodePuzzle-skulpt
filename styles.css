@@ -12,6 +12,10 @@ li {
     margin-left: 42px;
 }
 
+body > div {
+    clear: both;
+}
+
 div {
     position: relative;
     width: 800px;

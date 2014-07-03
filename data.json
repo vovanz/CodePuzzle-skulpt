@@ -1,7 +1,10 @@
 [
     {
-        "task" : "Step1: Fibonacci",
-        "lines" : ["def fibonacci(max):\n","    a, b = 0, 1\n", "    while a < max:\n", "        yield a\n", "        a, b = b, a + b\n", "for n in fibonacci(100):\n", "    print (n)"],
-        "input" : ""
+        "task": "Step1: Fibonacci",
+        "lines": ["def fibonacci(max):\n", "    a, b = 0, 1\n", "    while a < max:\n", "        yield a\n", "        a, b = b, a + b\n", "for n in fibonacci(100):\n", "    print (n)"]
+    },
+    {
+        "task": "Step2: Insertion sort",
+        "lines": ["lst = [5, 7, 20, 11, 10, 2, 1, 5, 17, 0]\n", "for i in range(1, len(lst)):\n", "    j = i-1\n", "    while (j >= 0) and (lst[j] > lst[j+1]):\n", "        lst[j], lst[j+1] = lst[j+1], lst[j]\n", "        j -= 1\n", "print(lst)"]
     }
 ]
