@@ -5,6 +5,7 @@ body  {
 
 ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 li {
@@ -14,7 +15,7 @@ li {
 }
 
 #task {
-    margin-left: 42px;
+
 }
 
 body > div {
@@ -24,7 +25,6 @@ body > div {
 div, p {
     position: relative;
     width: 1000px;
-    margin-left: 42px;
 }
 
 #output div {
