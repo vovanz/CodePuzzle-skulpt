@@ -14,6 +14,10 @@ CodePuzzle = {
         }
     },
     start: function () {
+        $('html, body').animate({
+                scrollTop: 0
+            }, 500
+        );
         var i;
         var level = CodePuzzle.data[CodePuzzle.step];
         var lines = level.lines.slice();
@@ -35,22 +39,6 @@ CodePuzzle = {
             console.log(e.toString());
             console.log(prog);
         }
-
-        /*if(typeof level.easiness != "undefined") {
-            var new_lines = [];
-            var new_line = '';
-            for(i=0; i < lines.length; i++) {
-                new_line += lines[i];
-                if(Math.random() < 1/level.easiness) {
-                    new_lines.push(new_line);
-                    new_line = "";
-                }
-            }
-            if(new_line != '') {
-                new_lines.push(new_line);
-            }
-            lines = new_lines;
-        }*/
         lines = shuffle(lines);
         var puzzle = $('ul#code_puzzle');
         puzzle.html('');
