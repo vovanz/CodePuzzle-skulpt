@@ -56,8 +56,10 @@ CodePuzzle = {
         puzzle.sortable({
             deactivate: CodePuzzle.run
         });
-        var task = $('#task');
-        task.html(level.task);
+        var h1 = $('h1');
+        h1.html('Level'+(CodePuzzle.step+1).toString()+": "+level.title);
+        var title = $('title');
+        title.html('CodePuzzle. '+h1.html());
         CodePuzzle.run();
     },
     run: function() {

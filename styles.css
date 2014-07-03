@@ -10,12 +10,8 @@ ul {
 
 li {
     cursor: pointer;
-    width: 1000px;
+    width: 1065px;
     clear: both;
-}
-
-#task {
-
 }
 
 body > div {
@@ -24,11 +20,16 @@ body > div {
 
 div, p {
     position: relative;
-    width: 1000px;
+    width: 1065px;
+}
+
+#output {
+    overflow-y: scroll;
+    max-height: 500px;
 }
 
 #output div {
     margin: 0;
-    width: 499px;
+    width: 1065px;
     float: left;
 }
