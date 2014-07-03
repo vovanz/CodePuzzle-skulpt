@@ -36,7 +36,7 @@ CodePuzzle = {
             console.log(prog);
         }
 
-        if(typeof level.easiness != "undefined") {
+        /*if(typeof level.easiness != "undefined") {
             var new_lines = [];
             var new_line = '';
             for(i=0; i < lines.length; i++) {
@@ -50,7 +50,7 @@ CodePuzzle = {
                 new_lines.push(new_line);
             }
             lines = new_lines;
-        }
+        }*/
         lines = shuffle(lines);
         var puzzle = $('ul#code_puzzle');
         puzzle.html('');

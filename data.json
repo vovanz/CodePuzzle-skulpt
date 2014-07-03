@@ -12,7 +12,6 @@
         "lines": ["def print_matrix(m):\n", "    for i in m:\n", "        print(i)\n", "matrix = [[0.5,   0,   0,   0,   0],\n          [  1, 0.5,   0,   0,   0],\n          [  1,   1, 0.5,   0,   0],\n          [  1,   1,   1, 0.5,   0],\n          [  1,   1,   1,   1, 0.5]]\n", "matrix_t = list(zip(*matrix))\n", "print_matrix(matrix_t)\n"]
     },
     {
-        "easiness" : 4,
         "task" : "Step4: 99 bottles of beer",
         "lines" : ["for quant in range(99, 0, -1):\n", "   if quant > 1:\n", "      print quant, \"bottles of beer on the wall,\", quant, \"bottles of beer.\"\n", "      if quant > 2:\n", "         suffix = str(quant - 1) + \" bottles of beer on the wall.\"\n", "      else:\n", "         suffix = \"1 bottle of beer on the wall.\"\n", "   elif quant == 1:\n", "      print \"1 bottle of beer on the wall, 1 bottle of beer.\"\n", "      suffix = \"no more beer on the wall!\"\n", "   print \"Take one down, pass it around,\", suffix\n", "   print \"--\""]
     }
