@@ -6,5 +6,9 @@
     {
         "task": "Step2: Insertion sort",
         "lines": ["lst = [5, 7, 20, 11, 10, 2, 1, 5, 17, 0]\n", "for i in range(1, len(lst)):\n", "    j = i-1\n", "    while (j >= 0) and (lst[j] > lst[j+1]):\n", "        lst[j], lst[j+1] = lst[j+1], lst[j]\n", "        j -= 1\n", "print(lst)"]
+    },
+    {
+        "task": "Step3: Matrix",
+        "lines": ["def print_matrix(m):\n", "    for i in m:\n", "        print(i)\n", "matrix = [[0.5,   0,   0,   0,   0],\n          [  1, 0.5,   0,   0,   0],\n          [  1,   1, 0.5,   0,   0],\n          [  1,   1,   1, 0.5,   0],\n          [  1,   1,   1,   1, 0.5]]\n", "matrix_t = list(zip(*matrix))\n", "print_matrix(matrix_t)\n"]
     }
 ]
