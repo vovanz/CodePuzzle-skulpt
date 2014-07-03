@@ -5,8 +5,21 @@ ul {
 li {
     cursor: pointer;
     width: 800px;
+    clear: both;
 }
 
 #task {
     margin-left: 42px;
+}
+
+div {
+    position: relative;
+    width: 800px;
+    margin-left: 42px;
+}
+
+#output div {
+    margin: 0;
+    width: 390px;
+    float: left;
 }

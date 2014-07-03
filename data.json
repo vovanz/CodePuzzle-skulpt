@@ -1,6 +1,6 @@
 [
     {
-        "task" : "",
+        "task" : "Step1: Fibonacci",
         "lines" : ["def fibonacci(max):\n","    a, b = 0, 1\n", "    while a < max:\n", "        yield a\n", "        a, b = b, a + b\n", "for n in fibonacci(100):\n", "    print (n)"],
         "input" : ""
     }

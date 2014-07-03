@@ -7,27 +7,36 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
     <link rel="stylesheet" href="styles.css">
-
     <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
     <script src="skulpt.min.js" type="text/javascript"></script>
     <script src="skulpt-stdlib.js" type="text/javascript"></script>
     <script src="CodePuzzle.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $.getJSON('data.json',  function(data) {
-            var hash = window.location.hash.split('/');
-            if(hash[0] == '#step' && $.isNumeric(hash[1])) {
-                var code_puzzle = new CodePuzzle(data, parseInt(hash[1], 10));
-                $(code_puzzle.start);
-            } else {
-                window.location.hash = "#step/1";
-            }
-        });
-    </script>
 </head>
 <body>
-<p id="task"></p>
-<ul id="code_puzzle">
-
-</ul>
+<h1 id="task"></h1>
+<ul id="code_puzzle"></ul>
+<div>
+    <h2>Input:</h2>
+    <pre id="input"></pre>
+</div>
+<div id="output">
+    <div>
+        <h2>Correct output:</h2>
+        <pre id="correct"></pre>
+    </div>
+    <div>
+        <h2>Your output:</h2>
+        <pre id="your"></pre>
+    </div>
+</div>
+<div id="result"></div>
+<script type="text/javascript">
+    $.getJSON('data.json',  function(data) {
+        CodePuzzle.init(data);
+        $(window).bind( 'hashchange', function(e) {
+            CodePuzzle.change_step();
+        });
+    });
+</script>
 </body>
 </html>
