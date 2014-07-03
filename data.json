@@ -2,7 +2,6 @@
     {
         "task" : "",
         "lines" : ["def fibonacci(max):\n","    a, b = 0, 1\n", "    while a < max:\n", "        yield a\n", "        a, b = b, a + b\n", "for n in fibonacci(100):\n", "    print (n)"],
-        "input" : "",
-        "output" : "0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n55\n89\n"
+        "input" : ""
     }
 ]
