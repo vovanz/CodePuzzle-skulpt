@@ -15,7 +15,7 @@ CodePuzzle = {
     },
     start: function () {
         var level = CodePuzzle.data[CodePuzzle.step];
-        var lines = level.lines;
+        var lines = level.lines.slice();
 
         var prog = lines.join('');
         $('#correct').html('');
