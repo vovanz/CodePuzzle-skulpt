@@ -88,6 +88,10 @@ CodePuzzle = {
             } else {
                 $('#result').html('Congratulations! You won this game!');
             }
+            $('html, body').animate({
+                    scrollTop: $(document).height()-$(window).height()},
+                500
+            );
         }
     }
 };
