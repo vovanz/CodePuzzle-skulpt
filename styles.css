@@ -16,7 +16,7 @@ body > div {
     clear: both;
 }
 
-div {
+div, p {
     position: relative;
     width: 800px;
     margin-left: 42px;
