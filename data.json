@@ -61,6 +61,7 @@
     },
     {
         "title": "99 bottles of beer",
+        "easiness" : 2,
         "lines": [
             "for quant in range(99, 0, -1):\n",
             "   if quant > 1:\n",
