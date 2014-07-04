@@ -39,7 +39,7 @@ CodePuzzle = {
             console.log(e.toString());
             console.log(prog);
         }
-        if(typeof level.easiness == "number") {
+        if(typeof level.easiness == "number" && level.easiness > 1) {
             var new_lines = [];
             var new_line = '';
             for(i = 0; i < lines.length; i++) {
@@ -54,6 +54,9 @@ CodePuzzle = {
                 new_line = '';
             }
             lines = new_lines;
+            $('#comment').html('Reorder blocks to get correct output.');
+        } else {
+            $('#comment').html('Reorder lines to get correct output.');
         }
         lines = shuffle(lines);
         var puzzle = $('ul#code_puzzle');
@@ -114,7 +117,8 @@ CodePuzzle = {
                 $('#result').html('Level complete! <a href="#step/'+(CodePuzzle.step+2).toString()+'">Go to next level.</a>');
             } else {
                 ga('send', 'Win', 'win game', $('h1').text());
-                $('#result').html('Congratulations! You won this game!');
+                var share_html = $('#share').html();
+                $('#result').html('Congratulations! You won this game! Tell your friends! '+share_html);
             }
             $('html, body').animate({
                     scrollTop: $(document).height()-$(window).height()},
