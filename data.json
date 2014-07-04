@@ -12,6 +12,17 @@
         ]
     },
     {
+        "title": "Matrix",
+        "lines": [
+            "def print_matrix(m):\n",
+            "    for i in m:\n",
+            "        print(i)\n",
+            "matrix = [[0.5,   0,   0,   0,   0],\n          [  1, 0.5,   0,   0,   0],\n          [  1,   1, 0.5,   0,   0],\n          [  1,   1,   1, 0.5,   0],\n          [  1,   1,   1,   1, 0.5]]\n",
+            "matrix_t = list(zip(*matrix))\n",
+            "print_matrix(matrix_t)\n"
+        ]
+    },
+    {
         "title": "Insertion sort",
         "lines": [
             "lst = [5, 7, 20, 11, 10, 2, 1, 5, 17, 0]\n",
@@ -61,17 +72,6 @@
             "        return lesser + [pivot] + greater\n",
             "lst = [32, 27, 29, 25, 3, 24, 21, 20, 17, 19]\n",
             "print(qsort(lst))"
-        ]
-    },
-    {
-        "title": "Matrix",
-        "lines": [
-            "def print_matrix(m):\n",
-            "    for i in m:\n",
-            "        print(i)\n",
-            "matrix = [[0.5,   0,   0,   0,   0],\n          [  1, 0.5,   0,   0,   0],\n          [  1,   1, 0.5,   0,   0],\n          [  1,   1,   1, 0.5,   0],\n          [  1,   1,   1,   1, 0.5]]\n",
-            "matrix_t = list(zip(*matrix))\n",
-            "print_matrix(matrix_t)\n"
         ]
     },
     {
