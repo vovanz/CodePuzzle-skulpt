@@ -1,4 +1,5 @@
-body  {
+html, body  {
+    position: relative;
     margin: auto;
     width: 1065px;
 }
