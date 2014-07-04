@@ -46,3 +46,12 @@ div, p {
     float: left;
     color: dimgray;
 }
+
+#help_me {
+    clear:both;
+}
+
+#help_me_wrap {
+    overflow: hidden;
+    height: 0px;
+}
