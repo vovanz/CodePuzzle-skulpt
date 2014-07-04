@@ -18,7 +18,7 @@ CodePuzzle = {
                 scrollTop: 0
             }, 500
         );
-        var i;
+        var i, j;
         var level = CodePuzzle.data[CodePuzzle.step];
         var lines = level.lines.slice();
 
@@ -62,18 +62,21 @@ CodePuzzle = {
         var puzzle = $('ul#code_puzzle');
         puzzle.html('');
         for (i=0; i < lines.length; i++) {
-            var code = $('<code></code>').html(lines[i]);
-            var pre = $('<pre></pre>');
             var line = $('<li></li>');
-            code.appendTo(pre);
-            pre.each(function (i, e) {
-                hljs.highlightBlock(e)
-            });
-            pre.appendTo(line);
+            var locs = hljs.highlight('python', lines[i]).value.split("\n");
+            for(j = 0; j < locs.length; j++) if(locs[j] != "") {
+                var code = $('<code></code>').html(locs[j]);
+                var pre = $('<pre></pre>');
+                pre.addClass('hljs');
+                pre.addClass('python');
+                $('<div></div>').addClass('line-number').appendTo(pre);
+                code.appendTo(pre);
+                pre.appendTo(line);
+            }
             line.appendTo(puzzle);
         }
         puzzle.sortable({
-            deactivate: CodePuzzle.run
+            deactivate: CodePuzzle.run,
         });
         var h1 = $('h1');
         h1.html('Level'+(CodePuzzle.step+1).toString()+": "+level.title);
@@ -81,7 +84,15 @@ CodePuzzle = {
         title.html('CodePuzzle. '+h1.html());
         CodePuzzle.run();
     },
+    enumerate: function() {
+        var i = 1;
+        $('ul#code_puzzle').find('.line-number').each(function() {
+            $(this).html(i.toString()+'.');
+            i++;
+        });
+    },
     run: function() {
+        CodePuzzle.enumerate();
         var lines = $('ul#code_puzzle code');
         var prog = '';
         lines.each(function() {
