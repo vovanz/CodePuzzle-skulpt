@@ -49,6 +49,21 @@
         ]
     },
     {
+        "title": "Quicksort",
+        "lines": [
+            "def qsort(l):\n",
+            "    if l == []:\n",
+            "        return []\n",
+            "    else:\n",
+            "        pivot = l[0]\n",
+            "        lesser = qsort([x for x in l[1:] if x < pivot])\n",
+            "        greater = qsort([x for x in l[1:] if x >= pivot])\n",
+            "        return lesser + [pivot] + greater\n",
+            "lst = [32, 27, 29, 25, 3, 24, 21, 20, 17, 19]\n",
+            "print(qsort(lst))"
+        ]
+    },
+    {
         "title": "Matrix",
         "lines": [
             "def print_matrix(m):\n",
