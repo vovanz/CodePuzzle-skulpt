@@ -39,6 +39,22 @@ CodePuzzle = {
             console.log(e.toString());
             console.log(prog);
         }
+        if(typeof level.easiness == "number") {
+            var new_lines = [];
+            var new_line = '';
+            for(i = 0; i < lines.length; i++) {
+                new_line+=lines[i];
+                if(i>0 && i%level.easiness == 0) {
+                    new_lines.push(new_line);
+                    new_line = '';
+                }
+            }
+            if(new_line != '') {
+                new_lines.push(new_line);
+                new_line = '';
+            }
+            lines = new_lines;
+        }
         lines = shuffle(lines);
         var puzzle = $('ul#code_puzzle');
         puzzle.html('');
