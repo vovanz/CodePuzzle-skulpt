@@ -44,7 +44,7 @@ CodePuzzle = {
             var new_line = '';
             for(i = 0; i < lines.length; i++) {
                 new_line+=lines[i];
-                if(i>0 && i%level.easiness == 0) {
+                if(new_line != '' && (i+1)%level.easiness == 0) {
                     new_lines.push(new_line);
                     new_line = '';
                 }
