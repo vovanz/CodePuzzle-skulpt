@@ -110,10 +110,10 @@ CodePuzzle = {
             $('#result').html('Wrong answer!');
         } else {
             if(CodePuzzle.data[CodePuzzle.step+1]) {
-                _gaq.push(['_trackEvent', 'Win', 'level complete', $('h1').text()]);
+                ga('send', 'Win', 'level complete', $('h1').text());
                 $('#result').html('Level complete! <a href="#step/'+(CodePuzzle.step+2).toString()+'">Go to next level.</a>');
             } else {
-                _gaq.push(['_trackEvent', 'Win', 'win game', $('h1').text()]);
+                ga('send', 'Win', 'win game', $('h1').text());
                 $('#result').html('Congratulations! You won this game!');
             }
             $('html, body').animate({
