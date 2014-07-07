@@ -69,6 +69,17 @@ CodePuzzle = {
             deactivate: CodePuzzle.run,
             change: CodePuzzle.enumerate
         });
+        puzzle.attr('unselectable', 'on')
+            .css({
+                '-moz-user-select': 'none',
+                '-o-user-select': 'none',
+                '-khtml-user-select': 'none',
+                '-webkit-user-select': 'none',
+                '-ms-user-select': 'none',
+                'user-select': 'none'
+            }).bind('selectstart', function () {
+                return false;
+            });
         var h1 = $('h1');
         h1.html('Level' + (CodePuzzle.step + 1).toString() + ": " + level.title);
         var title = $('title');
