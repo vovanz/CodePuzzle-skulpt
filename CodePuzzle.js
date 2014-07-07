@@ -69,6 +69,7 @@ CodePuzzle = {
             pre.each(function (i, e) {
                 hljs.highlightBlock(e)
             });
+
             pre.appendTo(line);
             line.appendTo(puzzle);
         }
