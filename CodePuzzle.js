@@ -12,6 +12,7 @@ CodePuzzle = {
         if (hash[0] == '#step' && CodePuzzle.data.levels[step]) {
             CodePuzzle.step = step;
             CodePuzzle.start();
+            ga('send', 'pageview');
         } else {
             window.location.hash = '#step/1';
         }
