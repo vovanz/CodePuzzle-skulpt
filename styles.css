@@ -12,6 +12,11 @@ li {
     cursor: pointer;
     width: 1065px;
     clear: both;
+    margin-bottom: 13px;
+}
+
+pre {
+    margin: 0;
 }
 
 body > div {
@@ -32,4 +37,21 @@ div, p {
     margin: 0;
     width: 520px;
     float: left;
+}
+
+.line-number {
+    width: 20px;
+    margin-right: 30px;
+    text-align: right;
+    float: left;
+    color: dimgray;
+}
+
+#help_me {
+    clear:both;
+}
+
+#help_me_wrap {
+    overflow: hidden;
+    height: 0px;
 }

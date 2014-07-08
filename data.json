@@ -1,95 +1,99 @@
-[
-    {
-        "title": "Fibonacci",
-        "lines": [
-            "def fibonacci(max):\n",
-            "    a, b = 0, 1\n",
-            "    while a < max:\n",
-            "        yield a\n",
-            "        a, b = b, a + b\n",
-            "for n in fibonacci(100):\n",
-            "    print (n)"
-        ]
+{
+    "settings": {
+        "tries_timeout": 30000,
+        "tries": 10
     },
-    {
-        "title": "Matrix",
-        "lines": [
-            "def print_matrix(m):\n",
-            "    for i in m:\n",
-            "        print(i)\n",
-            "matrix = [[0.5,   0,   0,   0,   0],\n          [  1, 0.5,   0,   0,   0],\n          [  1,   1, 0.5,   0,   0],\n          [  1,   1,   1, 0.5,   0],\n          [  1,   1,   1,   1, 0.5]]\n",
-            "matrix_t = list(zip(*matrix))\n",
-            "print_matrix(matrix_t)\n"
-        ]
-    },
-    {
-        "title": "Insertion sort",
-        "lines": [
-            "lst = [5, 7, 20, 11, 10, 2, 1, 5, 17, 0]\n",
-            "for i in range(1, len(lst)):\n",
-            "    j = i-1\n",
-            "    while (j >= 0) and (lst[j] > lst[j+1]):\n",
-            "        lst[j], lst[j+1] = lst[j+1], lst[j]\n",
-            "        j -= 1\n",
-            "print(lst)"
-        ]
-    },
-    {
-        "title": "Heapsort",
-        "easiness" : 2,
-        "lines": [
-            "lst = [71, 74, 11, 16, 16, 52, 65, 81, 40, 4]\n",
-            "def heapsort(s):\n",
-            "    sl = len(s)\n",
-            "    def swap(pi, ci):\n",
-            "        if s[pi] < s[ci]:\n",
-            "            s[pi], s[ci] = s[ci], s[pi]\n",
-            "    def sift(pi, unsorted):\n",
-            "        i_gt = lambda a, b: a if s[a] > s[b] else b\n",
-            "        while pi*2+1 < unsorted:\n",
-            "            gtci = i_gt(pi*2+1, pi*2+2) if pi*2+2 < unsorted else pi*2+1\n",
-            "            swap(pi, gtci)\n",
-            "            pi = gtci\n",
-            "    for i in range((sl/2)-1, -1, -1):\n",
-            "        sift(i, sl)\n",
-            "    for i in range(sl-1, 0, -1):\n",
-            "        swap(i, 0)\n",
-            "        sift(0, i)\n",
-            "heapsort(lst)\n",
-            "print(lst)"
-        ]
-    },
-    {
-        "title": "Quicksort",
-        "lines": [
-            "def qsort(l):\n",
-            "    if l == []:\n",
-            "        return []\n",
-            "    else:\n",
-            "        pivot = l[0]\n",
-            "        lesser = qsort([x for x in l[1:] if x < pivot])\n",
-            "        greater = qsort([x for x in l[1:] if x >= pivot])\n",
-            "        return lesser + [pivot] + greater\n",
-            "lst = [32, 27, 29, 25, 3, 24, 21, 20, 17, 19]\n",
-            "print(qsort(lst))"
-        ]
-    },
-    {
-        "title": "99 bottles of beer",
-        "easiness" : 2,
-        "lines": [
-            "for quant in range(99, 0, -1):\n",
-            "   if quant > 1:\n",
-            "      print quant, \"bottles of beer on the wall,\", quant, \"bottles of beer.\"\n",
-            "      if quant > 2:\n",
-            "         suffix = str(quant - 1) + \" bottles of beer on the wall.\"\n",
-            "      else:\n",
-            "         suffix = \"1 bottle of beer on the wall.\"\n",
-            "   elif quant == 1:\n",
-            "      print \"1 bottle of beer on the wall, 1 bottle of beer.\"\n",
-            "      suffix = \"no more beer on the wall!\"\n",
-            "   print \"Take one down, pass it around,\", suffix\n",
-            "   print \"--\""
-        ]
-    }
-]
+    "levels": [
+        {
+            "title": "Fibonacci",
+            "lines": [
+                "def fibonacci(max):\n",
+                "    a, b = 0, 1\n",
+                "    while a < max:\n",
+                "        yield a\n",
+                "        a, b = b, a + b\n",
+                "for n in fibonacci(100):\n",
+                "    print (n)"
+            ]
+        },
+        {
+            "title": "Matrix",
+            "lines": [
+                "def print_matrix(m):\n",
+                "    for i in m:\n",
+                "        print(i)\n",
+                "matrix = [[0.5,   0,   0,   0,   0],\n          [  1, 0.5,   0,   0,   0],\n          [  1,   1, 0.5,   0,   0],\n          [  1,   1,   1, 0.5,   0],\n          [  1,   1,   1,   1, 0.5]]\n",
+                "matrix_t = list(zip(*matrix))\n",
+                "print_matrix(matrix_t)\n"
+            ]
+        },
+        {
+            "title": "Insertion sort",
+            "lines": [
+                "lst = [5, 7, 20, 11, 10, 2, 1, 5, 17, 0]\n",
+                "for i in range(1, len(lst)):\n",
+                "    j = i-1\n",
+                "    while (j >= 0) and (lst[j] > lst[j+1]):\n",
+                "        lst[j], lst[j+1] = lst[j+1], lst[j]\n",
+                "        j -= 1\n",
+                "print(lst)"
+            ]
+        },
+        {
+            "title": "Heapsort",
+            "lines": [
+                "lst = [71, 74, 11, 16, 16, 52, 65, 81, 40, 4]\n",
+                "def heapsort(s):\n",
+                "    sl = len(s)\n",
+                "    def swap(pi, ci):\n",
+                "        if s[pi] < s[ci]:\n",
+                "            s[pi], s[ci] = s[ci], s[pi]\n",
+                "    def sift(pi, unsorted):\n",
+                "        i_gt = lambda a, b: a if s[a] > s[b] else b\n",
+                "        while pi*2+1 < unsorted:\n",
+                "            gtci = i_gt(pi*2+1, pi*2+2) if pi*2+2 < unsorted else pi*2+1\n",
+                "            swap(pi, gtci)\n",
+                "            pi = gtci\n",
+                "    for i in range((sl/2)-1, -1, -1):\n",
+                "        sift(i, sl)\n",
+                "    for i in range(sl-1, 0, -1):\n",
+                "        swap(i, 0)\n",
+                "        sift(0, i)\n",
+                "heapsort(lst)\n",
+                "print(lst)"
+            ]
+        },
+        {
+            "title": "Quicksort",
+            "lines": [
+                "def qsort(l):\n",
+                "    if l == []:\n",
+                "        return []\n",
+                "    else:\n",
+                "        pivot = l[0]\n",
+                "        lesser = qsort([x for x in l[1:] if x < pivot])\n",
+                "        greater = qsort([x for x in l[1:] if x >= pivot])\n",
+                "        return lesser + [pivot] + greater\n",
+                "lst = [32, 27, 29, 25, 3, 24, 21, 20, 17, 19]\n",
+                "print(qsort(lst))"
+            ]
+        },
+        {
+            "title": "99 bottles of beer",
+            "lines": [
+                "for quant in range(99, 0, -1):\n",
+                "   if quant > 1:\n",
+                "      print quant, \"bottles of beer on the wall,\", quant, \"bottles of beer.\"\n",
+                "      if quant > 2:\n",
+                "         suffix = str(quant - 1) + \" bottles of beer on the wall.\"\n",
+                "      else:\n",
+                "         suffix = \"1 bottle of beer on the wall.\"\n",
+                "   elif quant == 1:\n",
+                "      print \"1 bottle of beer on the wall, 1 bottle of beer.\"\n",
+                "      suffix = \"no more beer on the wall!\"\n",
+                "   print \"Take one down, pass it around,\", suffix\n",
+                "   print \"--\""
+            ]
+        }
+    ]
+}
